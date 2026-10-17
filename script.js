@@ -40,7 +40,7 @@ function returnMoney() {
         setTimeout(function() {
             // TODO 2: รีเซ็ตเงินที่ใส่เข้ามาเป็น 0
             // คำใบ้: ตั้งค่า currentMoney = 0
-            
+            currentMoney = currentMoney - currentMoney
             
             document.getElementById('money').textContent = '0';
             dispensedArea.innerHTML = '';
