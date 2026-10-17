@@ -19,6 +19,7 @@ let currentMoney = 0;
 function insertMoney(amount) {
     // TODO 1: เพิ่มจำนวนเงินที่ใส่เข้ามา
     // คำใบ้: บวกค่า amount เข้ากับ currentMoney
+    currentMoney = currentMoney + amount
     
     
     document.getElementById('money').textContent = currentMoney;
