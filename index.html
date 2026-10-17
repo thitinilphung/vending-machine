@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Machine</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🍫 Vending Machine</h1>
+
+        <div class="main-content">
+            <!-- Left: Items -->
+            <div class="items-section">
+                <h2>Available Items</h2>
+                <div class="item-grid" id="itemGrid"></div>
+
+                <div class="dispenser">
+                    <h3>Pickup Area</h3>
+                    <div id="dispensedArea"></div>
+                </div>
+            </div>
+
+            <!-- Right: Cart & Controls -->
+            <div class="cart-section">
+                <h2>Your Cart</h2>
+                <div class="cart-items" id="cartItems">
+                    <div class="empty-cart">Cart is empty</div>
+                </div>
+
+                <div class="cart-totals">
+                    <div class="total-row">
+                        <span class="total-label">Items:</span>
+                        <span id="totalItems">0</span>
+                    </div>
+                    <div class="total-row">
+                        <span class="total-label">Total:</span>
+                        <span id="totalPrice">0</span>
+                    </div>
+                    <div class="total-row">
+                        <span class="total-label">Inserted:</span>
+                        <span id="money">0</span>
+                    </div>
+                    <div class="total-row">
+                        <span class="total-label">Change:</span>
+                        <span id="changeAmount">0</span>
+                    </div>
+                </div>
+
+                <div class="money-input">
+                    <h3>💰 Insert Money</h3>
+                    <div class="money-buttons">
+                        <button class="money-btn" onclick="insertMoney(1)">฿1</button>
+                        <button class="money-btn" onclick="insertMoney(5)">฿5</button>
+                        <button class="money-btn" onclick="insertMoney(10)">฿10</button>
+                        <button class="money-btn" onclick="insertMoney(20)">฿20</button>
+                        <button class="money-btn" onclick="insertMoney(50)">฿50</button>
+                        <button class="money-btn" onclick="insertMoney(100)">฿100</button>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="action-btn btn-checkout" onclick="checkout()">CHECKOUT</button>
+                    <button class="action-btn btn-return" onclick="returnMoney()">RETURN</button>
+                </div>
+
+                <div class="message" id="messageArea">Click items to add to cart</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
