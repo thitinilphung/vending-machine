@@ -91,6 +91,7 @@ function removeFromCart(index) {
     // TODO 4: ลบสินค้าออกจากตะกร้า
     // คำใบ้: ใช้ array method ที่สามารถลบข้อมูลตาม index ได้ (splice)
     
+    cart.splice(index,1)
     
     showMessage('Item removed from cart');
     updateCart();
