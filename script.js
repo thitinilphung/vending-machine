@@ -125,20 +125,22 @@ function updateCart() {
     // TODO 5: คำนวณราคารวมของสินค้าทั้งหมดในตะกร้า
     // คำใบ้: วนลูปหาผลรวมของ cart[i].price ทั้งหมด
     let totalPrice = 0;
-    
+    for (let i = 0; i < cart.length; i++) {
+    totalPrice = totalPrice + cart[i].price;
+}
     
     // TODO 6: คำนวณเงินทอน
     // คำใบ้: เงินทอน = เงินที่ใส่เข้ามา - ราคารวม
     const change = 0;
-    
+    const change = currentMoney - totalPrice;
     // TODO 7: แสดงจำนวนสินค้าทั้งหมดในตะกร้า (ใช้ DOM)
     // คำใบ้: ใช้ document.getElementById('totalItems') แล้วเปลี่ยน textContent
     // ตัวอย่าง: document.getElementById('totalItems').textContent = จำนวนสินค้า
-    
+    document.getElementById('totalItems').textContent = cart.length;
     
     // TODO 8: แสดงราคารวมทั้งหมด (ใช้ DOM)
     // คำใบ้: ใช้ document.getElementById('totalPrice') แล้วเปลี่ยน textContent
-    
+    document.getElementById('totalPrice').textContent = totalPrice;
     
     // ถ้าเงินทอนติดลบให้แสดง '0' แทน
     if (change < 0) {
@@ -158,12 +160,13 @@ function checkout() {
     // TODO 9: คำนวณราคารวมของสินค้าทั้งหมด
     // คำใบ้: เหมือนกับใน TODO 5 - วนลูปหาผลรวม
     let totalPrice = 0;
-    
-    
+    for (let i = 0; i < cart.length; i++) {
+    totalPrice = totalPrice + cart[i].price;
+}
     // TODO 10: ตรวจสอบว่าเงินที่ใส่มาพอหรือไม่
     // คำใบ้: คำนวณเงินทอน (currentMoney - totalPrice) และตรวจสอบว่าติดลบหรือไม่
     const change = 0;
-    
+    const change = currentMoney - totalPrice;
     if (change < 0) {
         showMessage('Not enough money! Insert ฿' + (-change) + ' more');
         return;
@@ -185,7 +188,8 @@ function checkout() {
     setTimeout(function() {
         // TODO 11: รีเซ็ตตะกร้าและเงินที่ใส่เข้ามา
         // คำใบ้: ตั้งค่า cart เป็น array ว่าง [] และ currentMoney เป็น 0
-        
+        cart = [];
+        currentMoney = 0;
         
         document.getElementById('money').textContent = '0';
         dispensedArea.innerHTML = '';
